@@ -30,9 +30,6 @@ jobs:
         with:
           go-version: ${{ matrix.go-version }}
 
-      - name: Set Go proxy
-        run: go env -w GOPROXY=https://proxy.golang.org,direct
-
       - name: Lint
         uses: golangci/golangci-lint-action@v4
         with:
