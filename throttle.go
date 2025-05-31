@@ -120,9 +120,5 @@ func (t *tokenBucket) Close() {
 		return
 	}
 
-	// Close the channel to signal refillAlgorithm to stop
 	close(t.doneCh)
-
-	// Give the refill goroutine a moment to exit cleanly
-	time.Sleep(1 * time.Millisecond)
 }
